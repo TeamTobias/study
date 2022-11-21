@@ -38,4 +38,24 @@ tasks.named('test') {
 - ``spring-cloud-starter-aws``: Spring Cloud AWS provides integration with Amazon Web Services.
 - ``spring-cloud-starter-aws-messaging``: Spring Cloud AWS Messaging
 - ``spring-cloud-starter-aws-parameter-store-config``: Spring Cloud AWS Parameter Store Config
-- 
+
+<br/>
+
+----
+
+<br/>
+
+
+```yaml
+cloud:
+  aws:
+    region:
+      auto: true
+    credentials:
+      access-key: KEY
+      secret-key: SECRET
+      
+```
+- ``cloud.aws.region.auto``: AWS Region
+- ``cloud.aws.credentials.access-key``: AWS Access Key
+- ``cloud.aws.credentials.secret-key``: AWS Secret Key

@@ -1,0 +1,7 @@
+cloud:
+  aws:
+    region:
+      auto: true
+    credentials:
+      access-key: KEY
+      secret-key: SECRET
