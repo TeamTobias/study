@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+//sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -17,9 +17,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.cloud:spring-cloud-starter-aws'
     implementation 'org.springframework.cloud:spring-cloud-starter-aws-messaging'
     implementation 'org.springframework.cloud:spring-cloud-starter-aws-parameter-store-config'
-
 }
 
 tasks.named('test') {
