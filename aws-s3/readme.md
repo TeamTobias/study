@@ -97,6 +97,100 @@ public class AwsS3Application {
 - ``System.setProperty("com.amazonaws.sdk.disableEc2Metadata", "true");``: AWS EC2 Metadata disable
 
 
+
+
+<br/>
+
+----
+
+<br/>
+
+```java
+package com.example.awss3.service;
+
+import com.example.awss3.dto.FileDetail;
+import org.springframework.web.multipart.MultipartFile;
+
+public interface FileUploadService {
+    FileDetail save(MultipartFile multipartFile);
+}
+
+```
+- ``FileDetail save(MultipartFile multipartFile);``: File upload
+- ``FileDetail``: File detail
+
+
+<br/>
+
+----
+
+<br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+
+----
+
+<br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+
+----
+
+<br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br/>
 
 ----
