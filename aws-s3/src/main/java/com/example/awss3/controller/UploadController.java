@@ -16,13 +16,10 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequestMapping(value = "/upload", produces = APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor
 public class UploadController {
-
     private final FileUploadService fileUploadService;
 
-
     @PostMapping
-    public ResponseEntity<FileDetail> post (@RequestPart("file") MultipartFile multipartFile) {
+    public ResponseEntity<FileDetail> post(@RequestPart("file") MultipartFile multipartFile) {
         return ResponseEntity.ok(fileUploadService.save(multipartFile));
     }
-
 }

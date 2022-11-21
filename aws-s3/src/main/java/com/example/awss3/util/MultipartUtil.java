@@ -1,11 +1,9 @@
 package com.example.awss3.util;
 
 import org.springframework.util.StringUtils;
-import org.springframework.web.multipart.MultipartFile;
-
 import java.util.UUID;
 
-public class MultipartUtil {
+public final class MultipartUtil {
     private static final String BASE_DIR = "images";
 
     /**
@@ -43,5 +41,4 @@ public class MultipartUtil {
     public static String createPath(String fileId, String format) {
         return String.format("%s/%s.%s", BASE_DIR, fileId, format);
     }
-
 }
