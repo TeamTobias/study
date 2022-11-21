@@ -2,7 +2,6 @@ package com.example.awss3.service;
 
 import com.example.awss3.dto.FileDetail;
 import com.example.awss3.persistence.AmazonS3ResourceRepository;
-import com.example.awss3.persistence.AmazonS3ResourceStorage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
