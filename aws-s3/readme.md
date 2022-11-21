@@ -9,7 +9,6 @@ plugins {
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-//sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -20,24 +19,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    implementation 'org.springframework.cloud:spring-cloud-starter-aws'
-    implementation 'org.springframework.cloud:spring-cloud-starter-aws-messaging'
-    implementation 'org.springframework.cloud:spring-cloud-starter-aws-parameter-store-config'
-
+    implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
 }
-
 ```
 
 - ``spring-boot-starter-thymeleaf``: Spring Boot starter for Thymeleaf
 - ``spring-boot-starter-web``: Spring Boot starter for web applications
 - ``spring-boot-devtools``: Spring Boot DevTools adds development-time features to your application.
 - ``spring-cloud-starter-aws``: Spring Cloud AWS provides integration with Amazon Web Services.
-- ``spring-cloud-starter-aws-messaging``: Spring Cloud AWS Messaging
-- ``spring-cloud-starter-aws-parameter-store-config``: Spring Cloud AWS Parameter Store Config
 
 <br/>
 
@@ -49,13 +42,27 @@ tasks.named('test') {
 ```yaml
 cloud:
   aws:
+    s3:
+      bucket: tobiastestbucket
     region:
-      auto: true
+      static: ap-northeast-2
+      auto: false
     credentials:
-      access-key: KEY
-      secret-key: SECRET
-      
+      access-key: AKIAQ3IRVK6RGOCB36D2
+      secret-key: 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
+    stack:
+      auto: false
+
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: ERROR
 ```
-- ``cloud.aws.region.auto``: AWS Region
-- ``cloud.aws.credentials.access-key``: AWS Access Key
-- ``cloud.aws.credentials.secret-key``: AWS Secret Key
+- ``cloud.aws.s3.bucket``: S3 bucket name
+- ``cloud.aws.region.static``: AWS region
+- ``cloud.aws.credentials.access-key``: AWS access key
+- ``cloud.aws.credentials.secret-key``: AWS secret key
+- ``cloud.aws.stack.auto``: AWS stack auto
+- ``logging.level.com.amazonaws.util.EC2MetadataUtils``: AWS logging level

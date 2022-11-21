@@ -1,7 +1,19 @@
 cloud:
   aws:
+    s3:
+      bucket: tobiastestbucket
     region:
-      auto: true
+      static: ap-northeast-2
+      auto: false
     credentials:
-      access-key: KEY
-      secret-key: SECRET
+      access-key: AKIAQ3IRVK6RGOCB36D2
+      secret-key: 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
+    stack:
+      auto: false
+
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: ERROR
