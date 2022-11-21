@@ -66,3 +66,39 @@ logging:
 - ``cloud.aws.credentials.secret-key``: AWS secret key
 - ``cloud.aws.stack.auto``: AWS stack auto
 - ``logging.level.com.amazonaws.util.EC2MetadataUtils``: AWS logging level
+  
+<br/>
+
+----
+
+<br/>
+
+```java
+package com.example.awss3;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AwsS3Application {
+
+    static {
+        System.setProperty("com.amazonaws.sdk.disableEc2Metadata", "true");
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(AwsS3Application.class, args);
+    }
+
+}
+
+```
+
+- ``System.setProperty("com.amazonaws.sdk.disableEc2Metadata", "true");``: AWS EC2 Metadata disable
+
+
+<br/>
+
+----
+
+<br/>
