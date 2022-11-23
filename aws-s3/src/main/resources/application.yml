@@ -1,20 +1,26 @@
 cloud:
   aws:
-    s3:
-      bucket: tobiastestbucket
     credentials:
       access-key: AKIAQ3IRVK6RGOCB36D2
       secret-key: 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
     region:
       static: ap-northeast-2
-      auto: false
     stack:
       auto: false
 
-logging:
-  level:
-    com:
-      amazonaws:
-        util:
-          EC2MetadataUtils: ERROR
+application:
+  bucket:
+    name: tobiastestbucket/thumbnail
+
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2MB
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+server:
+  port: 9090
 
